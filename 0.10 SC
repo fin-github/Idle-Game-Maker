@@ -1,0 +1,72 @@
+Let's make a game!
+//MADE BY HAND USING THE IDLE GAME API
+//MAKE A GAME WITHOUT NEEDING TO CODE AT https://orteil.dashnet.org/igm/help.html#howDoIPlayMyGame
+
+/* PLEASE DO NOT CHNAGE TO CHEAT
+IF YOU WANT TO CHEAT JOIN THE DISCORD
+*/
+name:Sloth Clicker!
+author: Finley
+desc:This game is like cookie clicker but with sloths! Also make with idle game API.
+created: 4/10/2022
+updated: 4/10/2022
+version: 0.10 BETA EDITION
+ 
+ 
+Settings
+ 
+building cost increase: 110%
+building cost refund: 95%
+ 
+Layout
+use default
+ 
+Buttons
+ 
+*SlothClick
+  name: ClickToGetaSloth
+  desc:Click this to gain a sloth. Grants 1 sloth per click.
+  on click:yield 1 sloth
+  show clicks
+  class:bigButton
+ 
+Resources
+ 
+*sloth
+  name:sloth
+  desc:This is A sloth (s)! The main currency of this game!
+  show earned
+ 
+ 
+ *PremiumCoins
+  name:PremiumCoins
+  desc:This is premium coins! They are a secondary currency for some items.
+  show earned
+ 
+Buildings
+ 
+ *AnimalKeeperLvl1
+  name:AnimalKeeperLvl1
+  desc:This is lvl 1 of the Animal keeper series! Gives 1 sloth per tick.
+ on tick:yield 1 sloth
+  cost:50 sloth
+  cost increase: 175%
+  cost refund: 85%
+ 
+Upgrades
+ 
+ *ZooTraining
+  name:Train-Zoo-Keepers
+  desc:This will upgrade the amount given per click by 2, and trains the workers! (Doesn't multiply your clicks.)
+  passive:multiply yield of AnimalKeeperLvl1 by 2
+  cost:150 sloths
+  req:20 PremiumCoins
+ 
+Shinies
+ 
+  *PremiumCoinSpawn
+  name:PremiumCoinDrop
+  on click:yield 1 PremiumCoins
+  movement:anywhere fade bounce moveRandom
+  frequency:(random(5,10))
+  duration:(random(5,10))
